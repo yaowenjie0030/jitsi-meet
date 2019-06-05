@@ -2,19 +2,23 @@
 
 This document describes the required steps for a quick Jitsi Meet installation on a Debian based GNU/Linux system. Debian 8 (Jessie) or later, and Ubuntu 14.04 or later are supported out-of-the-box.
 
+本文档描述了在基于Debian的GNU/Linux系统上快速安装Jitsi Meet所需的步骤。支持Debian 8 (Jessie)或更高版本，支持Ubuntu 14.04或更高版本。
+
 Debian Wheezy and other older systems may require additional things to be done. Specifically for Wheezy, [libc needs to be updated](http://lists.jitsi.org/pipermail/users/2015-September/010064.html).
 
 Also note that a recent default Ubuntu installation has only the `main` repository enabled, and Jitsi Meet needs packages from `universe`. Check your `/etc/apt/sources.list` file, and if `universe` is not present refer to [Ubuntu's documentation](https://help.ubuntu.com/community/Repositories/Ubuntu) on how to enable it. (Usually it amounts to copying the `main` lines and changing to `universe`.)
-
+还请注意，最近的默认Ubuntu安装只启用了“main”存储库，而Jitsi满足了来自“universe”的包的需求。检查您的/ etc /恰当的来源。列出“file”，如果“universe”不存在
 N.B.: 
 
 a.) All commands are supposed to be run by root. If you are logged in as a regular user with sudo rights, please prepend ___sudo___ to each of the commands.
+所有命令都应该由根用户运行。如果您是具有sudo权限的普通用户登录，请在每个命令前加上__sudo
 
 b.) You only need to do this if you want to ___host your own Jitsi server___. If you just want to have a video conference with someone, use https://meet.jit.si instead.
 
 ## Basic Jitsi Meet install
-
+基本的Jitsi满足安装
 ### Add the repository
+添加存储库
 ```sh
 echo 'deb https://download.jitsi.org stable/' >> /etc/apt/sources.list.d/jitsi-stable.list
 wget -qO -  https://download.jitsi.org/jitsi-key.gpg.key | apt-key add -
@@ -38,11 +42,13 @@ apt-get install apt-transport-https
 
 Note : Something to consider before installation is how you're planning to serve Jitsi Meet. The installer will check if Nginx or Apache is present (with this order) and configure a virtualhost within the web server it finds to serve Jitsi Meet. If none of the above is found it then configures itself to be served via jetty. So if for example you are planning on deploying Jitsi Meet with a web server, you have to make sure to install the server **before** installing jitsi-meet.
 
+注意:在安装之前要考虑的一些事情是如何为Jitsi Meet提供服务。安装程序将检查Nginx或Apache是否存在(按照这个顺序)，并在它发现的web服务器中配置一个虚拟主机来提供Jitsi Meet。如果没有找到上述任何一个，然后配置自己通过码头服务。因此，如果您计划部署Jitsi Meet与web服务器，您必须确保在安装Jitsi - Meet之前安装服务器
 ```sh
 apt-get -y install jitsi-meet
 ```
 
 During the installation, you will be asked to enter the hostname of the Jitsi Meet instance. If you have a FQDN hostname for the instance already set up in DNS, enter it there. If you don't have a resolvable hostname, you can enter the IP address of the machine (if it is static or doesn't change).
+在安装过程中，将要求您输入Jitsi Meet实例的主机名。如果您已经在DNS中为实例设置了FQDN主机名，请在这里输入。如果没有可解析的主机名，可以输入机器的IP地址(如果它是静态的或者没有变化)
 
 This hostname (or IP address) will be used for virtualhost configuration inside the Jitsi Meet and also, you and your correspondents will be using it to access the web conferences.
 
