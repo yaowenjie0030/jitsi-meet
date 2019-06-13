@@ -12,11 +12,13 @@ Jitsi Meet允许非常有效的协作。用户可以通过流媒体访问他们�
 ## Installation
 
 On the client side, no installation is necessary. You just point your browser to the URL of your deployment. This section is about installing a Jitsi Meet suite on your server and hosting your own conferencing service.
+在客户端，不需要安装。您只需将浏览器指向部署的URL。本节介绍如何在服务器上安装Jitsi Meet套件并托管自己的会议服务。
 
 Installing Jitsi Meet is a simple experience. For Debian-based system, following the [quick-install](https://github.com/jitsi/jitsi-meet/blob/master/doc/quick-install.md) document, which uses the package system. You can also see a demonstration of the process in [this tutorial video](https://jitsi.org/tutorial).
+安装Jitsi Meet是一个简单的体验。对于基于debian的系统，遵循使用包系统的[quick-install](https://github.com/jitsi/jitsi-meet/blob/master/doc/quick-install.md)文档。您还可以在[本教程视频](https://jitsi.org/tutorial)中看到该过程的演示。
 
 For other systems, or if you wish to install all components manually, see the [detailed manual installation instructions](https://github.com/jitsi/jitsi-meet/blob/master/doc/manual-install.md).
-
+对于其他系统，或者如果希望手动安装所有组件，请参阅[详细的手动安装说明](https://github.com/jitsi/jitsi-meet/blob/master/doc/manu-install.md)
 ## Download
 
 | Latest stable release | [![release](https://img.shields.io/badge/release-latest-green.svg)](https://github.com/jitsi/jitsi-meet/releases/latest) |
@@ -35,6 +37,7 @@ You can get our mobile versions from here:
 * [iOS](https://itunes.apple.com/us/app/jitsi-meet/id1165103905)
 
 ## Building the sources
+建设资源
 
 Node.js >= 10 and npm >= 6 are required.
 
@@ -117,6 +120,7 @@ If you are looking to contribute to Jitsi Meet, first of all, thank you! Please
 see our [guidelines for contributing](CONTRIBUTING.md).
 
 ## Embedding in external applications
+外部集成
 
 Jitsi Meet provides a very flexible way of embedding in external applications by using the [Jitsi Meet API](doc/api.md).
 
