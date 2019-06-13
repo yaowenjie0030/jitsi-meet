@@ -1,16 +1,19 @@
 # Server Installation for Jitsi Meet
-
+服务器安装为Jitsi满足
 
 :warning: **WARNING:** Manual installation is not recommended. We recommend following the [quick-install](https://github.com/jitsi/jitsi-meet/blob/master/doc/quick-install.md) document. The current document describes the steps that are needed to install a working deployment, but steps are easy to mess up, and the debian packages are more up-to-date, where this document sometimes is not updated to latest changes.
-
+警告:**警告:**不建议手动安装。我们建议遵循[quick-install](https://github.com/jitsi/jitsi-meet/blob/master/doc/quick-install.md)文档。当前文档描述了安装工作部署所需的步骤，但是这些步骤很容易出错，而且debian软件包是最新的，有时该文档并不更新到最新的更改。
 
 
 This describes configuring a server `jitsi.example.com` running Debian or a Debian Derivative. You will need to
 change references to that to match your host, and generate some passwords for
 `YOURSECRET1`, `YOURSECRET2` and `YOURSECRET3`.
+这描述了如何配置运行Debian或Debian派生程序的服务器jitsi.example.com。你需要
+更改对它的引用以匹配您的主机，并为其生成一些密码
+“你的秘密1”、“你的秘密2”和“你的秘密3”
 
 There are also some complete [example config files](https://github.com/jitsi/jitsi-meet/tree/master/doc/example-config-files/) available, mentioned in each section.
-
+还有一些完整的[示例配置文件](https://github.com/jitsi/jitsi-meet/tree/master/doc/example-config-files/)，在每个部分都提到过
 ## Network description
 
 This is how the network looks:
