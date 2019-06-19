@@ -1,11 +1,11 @@
 # Jitsi Meet API
 
 You can use the Jitsi Meet API to embed Jitsi Meet in to your application. You are also welcome to use it for embedding the globally distributed and highly available deployment on meet.jit.si itself. The only thing we ask for in that case is that you please DO NOT remove the jitsi.org logo from the top left corner.
-
+您可以使用Jitsi Meet API将Jitsi Meet嵌入到应用程序中。还欢迎您使用它在meet.jit上嵌入全局分布式的高可用性部署。如果本身。在这种情况下，我们只要求您不要从左上角删除jitsi.org徽标。
 ## Installation
 
 To embed Jitsi Meet in your application you need to add the Jitsi Meet API library:
-
+要在应用程序中嵌入Jitsi Meet，需要添加Jitsi Meet API库
 ```javascript
 <script src='https://meet.jit.si/external_api.js'></script>
 ```
@@ -15,12 +15,17 @@ To embed Jitsi Meet in your application you need to add the Jitsi Meet API libra
 
 The next step for embedding Jitsi Meet is to create the Jitsi Meet API object.
 Its constructor gets a number of options:
+嵌入Jitsi Meet的下一步是创建Jitsi Meet API对象。
+它的构造函数有很多选项:
 
 * **domain**: domain used to build the conference URL, 'meet.jit.si' for
   example.
-* **options**: object with properties - the optional arguments:
-    * **roomName**: (optional) name of the room to join.
+  域用于构建会议URL 'meet.jit '。如果对
+的例子。
+* **options**: object with properties - the optional arguments:对象与属性-可选参数:
+    * **roomName**: (optional) name of the room to join.(可选)要加入的房间名称
     * **width**: (optional) width for the iframe which will be created. If a number is specified it's treated as pixel units. If a string is specified the format is number followed by 'px', 'em', 'pt' or '%'.
+    (可选)将要创建的iframe的宽度。如果指定了一个数字，它将被视为像素单位。如果指定了一个字符串，则格式为后跟'px'、'em'、'pt'或'%'的数字。
     * **height**: (optional) height for the iframe which will be created. If a number is specified it's treated as pixel units. If a string is specified the format is number followed by 'px', 'em', 'pt' or '%'.
     * **parentNode**: (optional) HTML DOM Element where the iframe will be added as a child.
     * **configOverwrite**: (optional) JS object with overrides for options defined in [config.js].
@@ -45,7 +50,7 @@ const api = new JitsiMeetExternalAPI(domain, options);
 ```
 
 You can set the initial media devices for the call:
-
+您可以为呼叫设置初始媒体设备:
 ```javascript
 const domain = 'meet.jit.si';
 const options = {
@@ -62,7 +67,8 @@ const api = new JitsiMeetExternalAPI(domain, options);
 
 You can overwrite options set in [config.js] and [interface_config.js].
 For example, to enable the filmstrip-only interface mode, you can use:
-
+您可以覆盖[config中设置的选项。js]和[interface_config.js]。
+例如，要启用只使用胶片的界面模式，可以使用:
 ```javascript
 const options = {
     ...
@@ -73,7 +79,7 @@ const api = new JitsiMeetExternalAPI(domain, options);
 ```
 
 You can also pass a jwt token to Jitsi Meet:
-
+您还可以传递jwt令牌给Jitsi Meet:
  ```javascript
 const options = {
     ...
@@ -85,10 +91,10 @@ const api = new JitsiMeetExternalAPI(domain, options);
  ```
 
 ### Controlling the embedded Jitsi Meet Conference
-
-Device management `JitsiMeetExternalAPI` methods:
+控制嵌入式Jitsi会议
+Device management `JitsiMeetExternalAPI` methods:设备管理“JitsiMeetExternalAPI”方法:
 * **getAvailableDevices** - Retrieve a list of available devices.
-
+** *getAvailableDevices** -检索可用设备列表。
 ```javascript
 api.getAvailableDevices().then(devices => {
     // devices = {
@@ -115,7 +121,7 @@ api.getAvailableDevices().then(devices => {
 });
 ```
 * **getCurrentDevices** - Retrieve a list with the devices that are currently selected.
-
+** *getCurrentDevices** -检索当前选择的设备的列表。
 ```javascript
 api.getCurrentDevices().then(devices => {
     // devices = {
@@ -142,7 +148,7 @@ api.getCurrentDevices().then(devices => {
 });
 ```
 * **isDeviceChangeAvailable** - Resolves with true if the device change is available and with false if not.
-
+**isDeviceChangeAvailable** -如果设备更改可用，则解析为true;如果不可用，则解析为false
 ```javascript
 // The accepted deviceType values are - 'output', 'input' or undefined.
 api.isDeviceChangeAvailable(deviceType).then(isDeviceChangeAvailable => {
@@ -150,7 +156,7 @@ api.isDeviceChangeAvailable(deviceType).then(isDeviceChangeAvailable => {
 });
 ```
 * **isDeviceListAvailable** - Resolves with true if the device list is available and with false if not.
-
+** *isDeviceListAvailable** -如果设备列表可用，则解析为true;如果不可用，解析为false
 ```javascript
 api.isDeviceListAvailable().then(isDeviceListAvailable => {
     ...
@@ -526,14 +532,15 @@ api.invite([ {...}, {...}, {...} ]).then(() => {
 });
 ```
 **NOTE: The format of the invitees in the array depends on the invite service used for the deployment.**
-
+**注意:数组中受邀者的格式取决于用于部署的invite服务
 You can remove the embedded Jitsi Meet Conference with the following API function:
+您可以使用以下API函数删除嵌入式Jitsi meeting会议:
 ```javascript
 api.dispose();
 ```
 
 NOTE: It's a good practice to remove the conference before the page is unloaded.
-
+注意:在卸载页面之前删除会议是一个很好的实践。
 [config.js]: https://github.com/jitsi/jitsi-meet/blob/master/config.js
 [interface_config.js]: https://github.com/jitsi/jitsi-meet/blob/master/interface_config.js
 [EventEmitter]: https://nodejs.org/api/events.html
